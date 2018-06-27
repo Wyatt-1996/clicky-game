@@ -1,0 +1,143 @@
+.App {
+  text-align: center;
+}
+
+/* .App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
+
+.header{
+  z-index: 1;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: rgb(58, 0, 194);
+  color: white;
+  padding: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: 0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22);
+}
+
+.second{
+  font-weight: 450;
+  font-size: 27px;
+  margin-top: 24px;
+}
+
+.body{
+  margin-top: 81px;
+}
+
+.pattern{
+  width: 100%;
+  filter: brightness(60%) grayscale(50%);
+}
+
+.name{
+  position: absolute;
+  top: 24%;
+  left: 46%;
+  transform: translate(-36%, -45%);
+  color: white;
+  font-size: 60px;
+}
+
+.directions{
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}
+
+.imgsDiv{
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 45px;
+  grid-column-gap: 21px;
+}
+
+.img{
+  width: 90px;
+  padding: 45px;
+  border: 6px solid whitesmoke;
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+  transition: .2s;
+  transition-timing-function: ease-in-out;
+}
+
+.img:hover{
+  transition: .2s;
+  transition-timing-function: ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#img0{
+  background-color: greenyellow;
+}
+#img1{
+  background-color: lightblue;
+}
+#img2{
+  background-color: rgb(144, 0, 216);
+}
+#img3{
+  background-color: orange;
+}
+#img4{
+  background-color: lightcoral;
+}
+#img5{
+  background-color: royalblue;
+}
+#img6{
+  background-color: yellow;
+}
+#img7{
+  background-color: green;
+}
+#img8{
+  background-color: rgb(74, 191, 70);
+}
+#img9{
+  background-color: aquamarine;
+}
+#img10{
+  background-color: turquoise;
+}
+#img11{
+  background-color: thistle;
+}
+
+.footer{
+  margin-top: 90px;
+  background-color: rgb(76, 0, 255);
+  padding-top: 75px;
+}
+
+.bottom{
+  background-color: rgb(58, 0, 194);
+  color: white;
+  padding: 12px;
+  text-align: left !important;
+  font-weight: bold;
+}
+
+.githubIcon{
+  width: 30px;
+  margin-right: 9px;
+}
+.reactIcon{
+  width: 39px;
+}
