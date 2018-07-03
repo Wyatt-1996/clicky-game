@@ -17,7 +17,68 @@ import ghIcon from './assets/imgs/github-big-logo.png';
 import reactIcon from './assets/imgs/React-icon.svg.png';
 import './App.css';
 
-var imgArray = [dino, dino1, dino2, dino3, dino4, dino5, dino6, dino7, dino8, dino9, dino10, dino11];
+var imgArray = [
+  {
+    id: 0,
+    url: dino,
+    beenClicked: false
+  },
+  {
+    id: 1,
+    url: dino1,
+    beenClicked: false
+  },
+  {
+    id: 2,
+    url: dino2,
+    beenClicked: false
+  },
+  {
+    id: 3,
+    url: dino3,
+    beenClicked: false
+  },
+  {
+    id: 4,
+    url: dino4,
+    beenClicked: false
+  },
+  {
+    id: 5,
+    url: dino5,
+    beenClicked: false
+  },
+  {
+    id: 6,
+    url: dino6,
+    beenClicked: false
+  },
+  {
+    id: 7,
+    url: dino7,
+    beenClicked: false
+  },
+  {
+    id: 8,
+    url: dino8,
+    beenClicked: false
+  },
+  {
+    id: 9,
+    url: dino9,
+    beenClicked: false
+  },
+  {
+    id: 10,
+    url: dino10,
+    beenClicked: false
+  },
+  {
+    id: 11,
+    url: dino11,
+    beenClicked: false
+  }
+];
 
 class App extends Component {
   constructor() {
@@ -25,21 +86,62 @@ class App extends Component {
     this.state = {
       status: 'Click an image to begin!',
       score: 0,
-      topScore: 0
+      topScore: 0,
+      imgArray: imgArray
     }
   }
 
-  imgClick = () => {
-    this.setState({
-      status: 'You guessed correctly!',
-      score: 1,
-      topScore: 1
-    });
+  imgClick = (id) => {
+    console.log(id);
+
+    var that = this;
+
+    for(var i=0; i < imgArray.length; i++) {
+      if(id === imgArray[i].id) {
+        if(imgArray[i].beenClicked === false) {
+          imgArray[i].beenClicked = true;
+          this.setState({
+            status: this.state.score >= 11 ? 'You Win!' : 'You guessed correctly',
+            score: this.state.score+1,
+            topScore: this.state.topScore+1
+          });
+          document.querySelector('.info').classList.add('correct');
+          setTimeout(function() {
+            document.querySelector('.info').classList.remove('correct');
+          }, 300);
+        } else {
+          this.setState({
+            status: 'You Lost!',
+            score: 0
+          });
+          document.querySelector('.imgsDiv').classList.add('animated');
+          document.querySelector('.imgsDiv').classList.add('wobble');
+          document.querySelector('.info').classList.add('incorrect');
+          setTimeout(function() {
+            document.querySelector('.info').classList.remove('incorrect');
+          }, 300);
+          for(var i=0; i < imgArray.length; i++) {
+            imgArray[i].beenClicked = false
+          }
+          setTimeout(function() {
+            that.setState({
+              status: 'Click an image to begin!'
+            });
+            document.querySelector('.imgsDiv').classList.remove('animated');
+            document.querySelector('.imgsDiv').classList.remove('wobble');
+          }, 1000);
+        }
+      }
+    }
+
+   
+    // reorder imgArray
+    imgArray.sort(() => Math.random()-0.5);
   }
 
   render() {
-    const displayImgs = imgArray.map((eachItem, key) =>
-      <img className="img" id={"img" + key} onClick={this.imgClick} src={eachItem} alt={key} key={key} />
+    const displayImgs = this.state.imgArray.map((eachItem, key) =>
+      <img className="img" id={"img" + eachItem.id} key={key} onClick={() => this.imgClick(eachItem.id)} src={eachItem.url} alt={key} />
     );
 
     return (
