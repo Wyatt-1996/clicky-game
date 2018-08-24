@@ -157,7 +157,7 @@ class App extends Component {
         <div className="body">
           <img className="pattern" src={pattern} alt="geometric pattern" />
           <h1 className="name">How to Play</h1>
-          <h2 className="directions">Click on an image to earn points, but don't click on any image more than once!</h2>
+          <h2 className="directions">Don't Click The Same Dino Twice!</h2>
           <div className="imgsDiv">
             {displayImgs}
           </div>
