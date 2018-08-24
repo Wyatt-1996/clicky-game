@@ -2,15 +2,6 @@
   text-align: center;
 }
 
-/* .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-} */
-
 .header{
   z-index: 1;
   width: 100%;
@@ -159,6 +150,12 @@
   width: 30px;
   margin-right: 9px;
 }
-.reactIcon{
-  width: 39px;
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  width: 45px;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }

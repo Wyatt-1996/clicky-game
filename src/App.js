@@ -14,7 +14,7 @@ import dino9 from './assets/imgs/syntarsus.png';
 import dino10 from './assets/imgs/ichthyosaurus.png';
 import dino11 from './assets/imgs/nodosaurus.png';
 import ghIcon from './assets/imgs/github-big-logo.png';
-import reactIcon from './assets/imgs/React-icon.svg.png';
+import reactIcon from './logo.svg';
 import './App.css';
 
 var imgArray = [
@@ -170,7 +170,7 @@ class App extends Component {
               <img className="githubIcon" src={ghIcon} />
             </a>
             <a href="https://reactjs.org" target="_blank">
-              <img className="reactIcon" src={reactIcon} />
+              <img className="reactIcon App-logo" src={reactIcon} />
             </a>
           </div>
         </div>
